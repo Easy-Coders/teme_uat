@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Required meta tags-->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <!-- Color theme for statusbar (Android only) -->
+      <meta name="theme-color" content="#2196f3">
+      <!-- Your app title -->
+      <title>Health Tracker</title>
+      <!-- Path to Framework7 Library Bundle CSS -->
+      <link rel="stylesheet" href="packages/core/css/framework7.bundle.min.css">
+      <link rel="stylesheet" href="fontawesome-free-5.11.2-web/css/all.css">
+      <!-- Path to your custom app styles-->
+      <style>
+         label {
+         float: right;
+         }
+         .button {
+         float: right;
+         }
+         hr{
+         border: 1px solid #ddd;
+         }
+         .block-title{
+         margin-top:20px;
+         margin-bottom: 20px;
+         font-weight: 300;
+         font-size: 14px;
+         }
+         *{padding:0;margin:0;}
+         body{
+         font-family:Verdana, Geneva, sans-serif;
+         font-size:18px;
+         }
+         
+         span{
+              font-weight: 300;
+             font-size: 15px;
+         }
+         
+         .title{
+             font-size: 17px !important;
+             
+         }
+         
+         .button popup-open{
+             margin-top: 10px !important;
+         }
+         
+         
+         .float{
+         position:fixed;
+         width:60px;
+         height:60px;
+         bottom:40px;
+         right:40px;
+         background-color:#0C9;
+         color:#FFF;
+         border-radius:50px;
+         text-align:center;
+         box-shadow: 2px 2px 3px #999;
+         }
+         .my-float{
+         margin-top:22px;
+         }
+         .navbar-inner{
+                 BACKGROUND: white !important;
+         }
+        .dialog-buttons-vertical .dialog-button {
+    margin-left: 0;
+    text-align: left !important;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+      </style>
+   </head>
+   <body>
+      <div id="app">
+         <div class="view view-main view-init">
+            <div class="page">
+               <div class="navbar">
+                  <div class="navbar-bg"></div>
+                  <div class="navbar-inner sliding">
+                     <div class="left">
+                        <a class="link">
+                        <i class="icon icon-back"></i>
+                        <span class="if-not-md">
+                            Back
+                        </span>
+                        </a>
+                     </div>
+                     <div class="title">Reminders</div>
+                  </div>
+               </div>
+               <div class="page-content">
+                  <div class="block-title">Period & Ovulation</div>
+                  <div class="block">
+                     <span>Period</span>
+                     <label class="toggle toggle-init color-blue">
+                     <input type="checkbox" checked>
+                     <span class="toggle-icon"></span>
+                     </label>
+                  </div>
+                  <div class="block">
+                     <span>Fertility Window</span>
+                     <label class="toggle toggle-init color-blue">
+                     <input type="checkbox">
+                     <span class="toggle-icon"></span>
+                     </label>
+                  </div>
+                  <div class="block">
+                     <span>Ovulation Day</span>
+                     <label class="toggle toggle-init color-blue">
+                     <input type="checkbox">
+                     <span class="toggle-icon"></span>
+                     </label>
+                  </div>
+                  <div class="block">
+                     <span>Period Input</span>
+                     <label class="toggle toggle-init color-blue">
+                     <input type="checkbox" checked>
+                     <span class="toggle-icon"></span>
+                     </label>
+                     <br>
+                     <span>Remind me to input period</span>
+                  </div>
+                 <div class="block"> <hr> </div>
+                  <div class="block">
+                     <div class="block-title">Medicine</div>
+                   
+                     <span>Birth Control</span>
+                     <label class="toggle toggle-init color-blue">
+                     <input type="checkbox">
+                     <span class="toggle-icon"></span>
+                     </label>
+                  </div>
+                  <div class="block"> <hr> </div>
+                  <div class="block">
+                     <div class="block-title">Life Style</div>
+                    
+                    
+                     <span>Drink Water</span>
+                     <label class="toggle toggle-init color-blue">
+                     <input type="checkbox" checked>
+                     <span class="toggle-icon"></span>
+                     </label>
+                     <br>
+                     <span>10:00 AM - 09:00PM</span>
+                  </div>
+                 <div class="block"> <hr> </div>
+                  <br>
+                  <br><br>
+                  <div class="block">
+                     <a href="" class="float button open-vertical">
+                     <i class="fa fa-plus my-float"></i>
+                     </a>  
+                  </div>
+                  <div class="block">
+                     <!-- Open drinkwater Popup -->
+                     <p><a class="button popup-open" href="#" data-popup=".popup-drinkwater">Open Drink water Popup</a></p>
+                  </div>
+                  <div class="block">
+                     <!-- Open period Popup -->
+                     <p><a class="button popup-open" href="#" data-popup=".popup-period">Open Period Popup</a></p>
+                  </div>
+                  <div class="block">
+                     <!-- Open fertilitywindow Popup -->
+                     <p><a class="button popup-open" href="#" data-popup=".popup-fertilitywindow">Open Fertility Window Popup</a></p>
+                  </div>
+                  <div class="block">
+                     <!-- Open Ovulationday Popup -->
+                     <p><a class="button popup-open" href="#" data-popup=".popup-Ovulationday">Open Ovulation Day Popup</a></p>
+                  </div>
+                  <div class="block">
+                     <!-- Open periodinput Popup -->
+                     <p><a class="button popup-open" href="#" data-popup=".popup-periodinput">Open Period Input Popup</a></p>
+                  </div>
+               </div>
+               <div class="popup popup-drinkwater" style="overflow-y:auto">
+                  <div class="block">
+                     <!---- form for capturing data !-----> 
+                     <!-- Close Popup -->
+                     <p>   <a class="link popup-close" href="#" class=""><i class="fa fa-chevron-left"></i></a>    <span style="margin-left:20px;font-weight:200px">Drink Water<span><a class="button popup-open" href="#" data-popup=".popup-drinkwater">Save</a></p>
+                     <hr>
+                     <div class="block">
+                        <span>Notifications</span>
+                        <label class="toggle toggle-init color-blue">
+                        <input type="checkbox">
+                        <span class="toggle-icon"></span>
+                        </label>
+                     </div>
+                     <div class="block">
+                        <span>Schedule</span>
+                     </div>
+                     <!----<div class="block">
+                        <span>Start</span>
+                        <label class="toggle toggle-init color-blue">
+                        <span class="toggle-icon"></span>
+                        </label>
+                     </div>
+                     <div class="block">
+                        <span>End</span>
+                        <label class="toggle toggle-init color-blue">
+                        <span class="toggle-icon"></span>
+                        </label>
+                     </div> !---->
+                     <div class="block">
+                        <span>Interval</span>
+                      
+                     </div>
+                     <div class="block">
+                        <span>Message</span>
+                        <br>
+                        <br>
+                        <span>It's time to drink water.</span>
+                     </div>
+                    
+                  </div>
+               </div>
+               <div class="popup popup-period" style="overflow-y:auto">
+                  
+                     <!---- form for capturing data !-----> 
+                     <!-- Close Popup -->
+                     <div class="navbar">
+                  <div class="navbar-bg"></div>
+                  <div class="navbar-inner sliding">
+                     <div class="left">
+                        <a class="link popup-close" href="#">
+                        <i class="icon icon-back"></i>
+                        <span class="if-not-md">
+                            Back
+                        </span>
+                        </a>
+                     </div>
+                     <div class="title">Period</div>
+                  </div>
+                  <a class="button popup-open" href="#" data-popup=".popup-period" style=" margin-top: 10px !important; font-size: 15px; margin-right: 10px !important; ">Save</a>
+               </div>
+                     
+                     
+                     
+                     
+                     
+                  
+                    
+                     
+                     
+                     
+                     <div class="block">
+                        <span>Notifications</span>
+                        <label class="toggle toggle-init color-blue">
+                        <input type="checkbox">
+                        <span class="toggle-icon"></span>
+                        </label>
+                     </div>
+                     <div class="block">
+                        <span>Reminder   
+                            
+            <input type="text" placeholder="Select reminder" readonly="readonly" style="float:right; margin-top: 5px;" id="demo-picker-device"/>
+          </span>
+                        
+                       
+                     </div>
+                     <div class="block">
+                         <span>Reminder time<input type="text" placeholder="Select time" readonly="readonly" id="demo-picker-describe" style="float:right; margin-top: 5px;"></span>
+    
+                        
+  
+      
+    
+
+                     </div>
+                   <form class="list" id="my-form">
+  
+   
+      <div class="item-content item-input">
+        <div class="item-inner">
+          <div class="item-title item-label">Message</div>
+          <div class="item-input-wrap">
+            <input type="text" name="name" value="Period is expected to start in 1 day">
+          </div>
+        </div>
+      </div>
+   
+  
+                   </form>
+                    
+                  </div>
+               </div>
+               <div class="popup popup-fertilitywindow" style="overflow-y:auto">
+                  <div class="block">
+                     <!---- form for capturing data !-----> 
+                     <!-- Close Popup -->
+                     <p>   <a class="link popup-close" href="#" class=""><i class="fa fa-chevron-left"></i></a>    <span style="margin-left:20px;font-weight:200px">Fertility Window<span><a class="button popup-open" href="#" data-popup=".popup-fertilitywindow">Save</a></p>
+                     <hr>
+                     <div class="block">
+                        <span>Notifications</span>
+                        <label class="toggle toggle-init color-blue">
+                        <input type="checkbox">
+                        <span class="toggle-icon"></span>
+                        </label>
+                     </div>
+                     <div class="block">
+                        <span>Reminder</span>
+                        
+                     </div>
+                     <div class="block">
+                        <span>Reminder time</span>
+                        
+                     </div>
+                     <div class="block">
+                        <span>Message</span>
+                        <br>
+                        <br>
+                        <span>Fertility is expected to start in 1 day.</span>
+                     </div>
+                    
+                  </div>
+               </div>
+               <div class="popup popup-Ovulationday" style="overflow-y:auto">
+                  <div class="block">
+                     <!---- form for capturing data !-----> 
+                     <!-- Close Popup -->
+                     <p>   <a class="link popup-close" href="#" class=""><i class="fa fa-chevron-left"></i></a>    <span style="margin-left:20px;font-weight:200px">Ovulation Day<span><a class="button popup-open" href="#" data-popup=".popup-Ovulationday">Save</a></p>
+                     <hr>
+                     <div class="block">
+                        <span>Notifications</span>
+                        <label class="toggle toggle-init color-blue">
+                        <input type="checkbox">
+                        <span class="toggle-icon"></span>
+                        </label>
+                     </div>
+                     <div class="block">
+                        <span>Reminder</span>
+                        
+                     </div>
+                     <div class="block">
+                        <span>Reminder time</span>
+                     
+                     </div>
+                     <div class="block">
+                        <span>Message</span>
+                        <br>
+                        <br>
+                        <span>Ovulation is expected to start in 1 day.</span>
+                     </div>
+                   
+                  </div>
+               </div>
+               <div class="popup popup-periodinput" style="overflow-y:auto">
+                  <div class="block">
+                     <!---- form for capturing data !-----> 
+                     <!-- Close Popup -->
+                     <p>   <a class="link popup-close" href="#" class=""><i class="fa fa-chevron-left"></i></a>  
+                         <span style="margin-left:20px;font-weight:200px">Period Input</span>
+                         <a class="button popup-open" href="#" data-popup=".popup-periodinput">Save</a></p>
+                     <hr>
+                     <div class="block">
+                        <span>Notifications</span>
+                        <label class="toggle toggle-init color-blue">
+                        <input type="checkbox">
+                        <span class="toggle-icon"></span>
+                        </label>
+                     </div>
+                     <div class="block">
+                        <span>Reminder</span>
+                      
+                     </div>
+                     <div class="block">
+                        <span>Reminder time</span>
+                       
+                     </div>
+                     <div class="block">
+                        <span>Message</span>
+                        <br>
+                        <br>
+                        <span>Did you forget to input your period?</span>
+                     </div>
+                    
+                  </div>
+               </div>
+               <div class="popup popup-periodinput" style="overflow-y:auto">
+                  <div class="block">
+                     <!---- form for capturing data !-----> 
+                     <!-- Close Popup -->
+                     <p> 
+                         <a class="link popup-close" href="#" class=""><i class="fa fa-chevron-left"></i></a>    
+                         <span style="margin-left:20px;font-weight:200px">
+                             Notification  Time<span><a class="button popup-open" href="#" data-popup=".popup-periodinput">Save</a></p>
+                     <hr>
+                     <div class="block">
+                        <span>Notifications</span>
+                        <label class="toggle toggle-init color-blue">
+                        <input type="checkbox">
+                        <span class="toggle-icon"></span>
+                        </label>
+                     </div>
+                     <div class="block">
+                        <span>Reminder</span>
+                       
+                     </div>
+                     <div class="block">
+                        <span>Reminder time</span>
+                        
+                     </div>
+                     <div class="block">
+                        <span>Message</span>
+                        <br>
+                        <br>
+                        <span>Did you forget to input your period?</span>
+                     </div>
+                  
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Path to Framework7 Library Bundle JS-->
+      <script type="text/javascript" src="packages/core/js/framework7.bundle.min.js"></script>
+      <!-- Path to your app js-->
+      <script type="text/javascript" src="js/app.js"></script>
+      
+   </body>
+</html>
