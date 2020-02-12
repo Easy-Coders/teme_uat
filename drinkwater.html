@@ -27,77 +27,75 @@
 <div id="app">
 	<div class="view view-main view-init">
 		<div class="page">
-			<div class="page-content" style="">
+			
 			  <!-- Static Navbar -->
-			  <div class="navbar" style="display:none;">
-				<div class="navbar-bg"></div>
-				<div class="navbar-inner">
-				  <div class="left">
-					<a class="link back">
-					  <i class="icon icon-back"></i>
-						<a href="#" class="panel-open" data-panel="left">
-						<i class="fa fa-bars" style="color;black"></i>
-						</a>
-					</a>
-					
-				  </div>
-				  <div class="title">TEME</div>
-			  
-				  <div class="right">  </div>
+			  <div class="navbar">
+                  <div class="navbar-bg"></div>
+                  <div class="navbar-inner sliding">
+                     <div class="left">
+                        <a class="link" onclick="back();">
+                        <i class="icon icon-back"></i>
+                        <span class="if-not-md">
+                            Back
+                        </span>
+                        </a>
+                     </div>
+                     <div class="title"></div>
+                  </div>
+               </div>
+			<div class="page-content" style="">
+			<h2> <center>Your Weight <i class="fa fa-weight"></i></center></h2>
+				<div class="block">
+			
+				
+					<div class="item-content item-input">
+					  <div class="item-inner">
+						<div class="item-input-wrap">
+						<center><input type="text" placeholder="Select Weight" readonly="readonly" id="demo-picker-describe-weight"/></center>
+						</div>
+					  </div>
+					</div>
+				</div>  
+			<h2> <center>Wake-up time <i class="fa fa-sun"></i></center></h2>
+				<div class="block">
+					<div class="item-content item-input">
+					  <div class="item-inner">
+						<div class="item-input-wrap">
+						<input type="text" placeholder="Your Wake-up time" readonly="readonly" id="demo-picker-describe-bedtime"/>
+						</div>
+					  </div>
+					</div>
 				</div>
-			  </div>
-			  
-			  <h2> <center>Welcome</center></h2>
-			  <div class="block">
-			  <form class="list" id="my-form" action="test.php">
-				<ul>
-				  <li>
+			<h2> <center>Bedtime <i class="fa fa-bed"></i></center></h2>
+				<div class="block">
 					<div class="item-content item-input">
 					  <div class="item-inner">
-						<div class="item-title item-label" style="  font-size: 17px !important;">How long is your Menstural cycle ?</div>
 						<div class="item-input-wrap">
-						  <input type="number" name="name" placeholder="Enter Between 25-35" required validate>
-						  <span class="input-clear-button"></span>
-			  
+						<input type="text" placeholder="Your Bedtime" readonly="readonly" id="demo-picker-describe-wakeuptime"/>
 						</div>
 					  </div>
 					</div>
-				  </li>
-				  <li>
-					<div class="item-content item-input">
-					  <div class="item-inner">
-						<div class="item-title item-label" style="  font-size: 17px !important;">How Long is your Period ?</div>
-						<div class="item-input-wrap">
-						  <input type="number" name="email" placeholder="Enter between 4-7 days" required>
-						</div>
-					  </div>
-					</div>
-				  </li>
-				  <li>
-					<div class="item-content item-input">
-					  <div class="item-inner">
-						<div class="item-title item-label" style="  font-size: 17px !important;">When Did you last get the period</div>
-						<div class="item-input-wrap">
-							<!---<input type="date" placeholder="Select date" readonly="readonly" id=""/>--->
-							<input type="text" placeholder="Select date" readonly="readonly" id="demo-calendar-modal"/>
-						</div>
-					  </div>
-					</div>
-				  </li>
-			 
-				</ul>
+				</div>
+			
+				<div class="block"> 
 				<div class="block row">
 					<div class="col">  <button class="col button button-large button-raised" style="border-radius: 50px;"   >Cancel</button></div>
 					<div class="col"><button class="col button button-large button-raised button-fill" style="border-radius: 50px;" type="submit" onclick="sub();">Done</button></div>
 				</div>
-			  </form>
-			</div>
+				</div>
+			
 			</div>
 		</div>
     </div>
+</div>
 	<script>
 	   function sub(){
 	      location.href="hexagon.html";
+        } 	   
+	   </script>
+	   <script>
+	   function back(){
+	      location.href="index.html";
         } 	   
 	   </script>
       <!---<div class="panel panel-left panel-cover sidebar">
@@ -108,7 +106,7 @@
         </div>
       </div>--->
       
-</div>
+
 
 	<!-- Path to Framework7 Library Bundle JS-->
     <script type="text/javascript" src="packages/core/js/framework7.bundle.min.js"></script>
