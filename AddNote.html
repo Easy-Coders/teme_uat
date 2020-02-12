@@ -144,29 +144,67 @@
 
 
 
+/* check box css */
 
 input[type="checkbox"][id^="cb"] {
   display: none;
 }
 
-:checked label {
-  margin-bottom: 15px;
+label {
   
+  padding: 5px;
+  display: block;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+  background-color:wheat;
+  border-radius: 100%;
 }
 
+label:before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid grey;
+  position: absolute;
+  top: -15px;
+  left: -5px;
+  width: 20px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+
+label img {
+  height: 100px;
+  width: 50px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+
+:checked + label {
+  border-color: #ddd;
+  background-color: orange;
+  border-radius: 100%;
+  
+}
 
 :checked + label:before {
   content: "✓";
-  background-color: pink;
+  background-color: grey;
   transform: scale(1);
-  padding: 8px;
-  margin-bottom: 15px;
-  
-  border-radius:100%;
-  
 }
 
-
+:checked + label img {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px #333;
+  z-index: -1;
+  border-radius: 100%;
+}
 </style>
 
 </style>
@@ -191,231 +229,265 @@ input[type="checkbox"][id^="cb"] {
             </div>
             
 			
-			<div class="page-content" id="page-content">
+		<div class="page-content" id="page-content">
 
-				<div class="block block-strong no-padding" style="margin-top:1px;">
-					<div id="demo-calendar-inline-container"></div>
-				  </div>
-				
-
-               <div class="block-title">Flow</div>
-			<div class="block">
-			  
-
-			  
-			  <div class="row">
-				<div class="col"><img src="images/drop2.png" style="height: 30px;"></div>
-				<div class="col"><img src="images/drop3.png" style="height: 30px;"></div>
-			
-				<div class="col"><img src="images/drop4.png" style="height: 30px;"></div>
-				<div class="col"><img src="images/drop1.png" style="height: 30px;"></div>
-				
-			  </div>
-			  <div class="row">
-				<div class="label">Light</div>
-				<div class="label">&nbsp;&nbsp;Medium</div>
-				<div class="label">&nbsp;Heavy</div>
-				<div class="label">&nbsp;Disaster</div>
-				
-			  </div>
-			 
-			  
+			<div class="block block-strong no-padding" style="margin-top:1px;">
+				<div id="demo-calendar-inline-container"></div>
 			</div>
-			<hr>
-				   <!--<li class="item-divider"></li>-->
-			   <div class="block-title">Intercourse</div>
-			<div class="block">
-			  
-				
 				
 
-				
-			  <div class="row">
-				<div class="col">
-					<a href="" class="button popup-open" data-popup=".popup-condomoption"><img src="images/condom.png" style="height: 30px;"></a>
-					</div>
-				<div class="col">
-					<a href="" class="button popup-open" data-popup=".popup-condomoption"><img src="images/pill.png" style="height: 30px;"></a>
+            <div class="block-title">Flow</div>
+			<div class="block">
+				<div class="row">
+					<input type="checkbox" id="cb1"/>
+						<label for="cb1"><img src="images/drop2.png" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb2"/>
+						<label for="cb2"><img src="images/drop3.png" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb3"/>
+						<label for="cb3"><img src="images/drop4.png" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb4"/>
+						<label for="cb4"><img src="images/drop1.png" style="height: 50px;">
+					</label>
 					
 				</div>
-				<div class="col">
-					<a href="" class="button popup-open" data-popup=".popup-condomoption"><img src="images/heart.png" style="height: 30px;"></a>
-				
+				<div class="row">
+					<div class="label">Light</div>
+					<div class="label">&nbsp;&nbsp;Medium</div>
+					<div class="label">&nbsp;Heavy</div>
+					<div class="label">&nbsp;Disaster</div>
+					
 				</div>
-				<div class="col">
-				<a href="" class="button popup-open" data-popup=".popup-condomoption"><h1>3</h1></a>
-				
+			</div>
+			<hr>
+				   
+			<div class="block-title">Intercourse</div>
+			<div class="block">
+				<div class="row">
+					<input type="checkbox" id="cb5"/>
+						<label for="cb5">
+						<a href="" class="button popup-open" data-popup=".popup-condomoption" style="height: 50px;"><img src="images/condom.png" style="height:50px;width:40px;"></a>
+					</label>
+					<input type="checkbox" id="cb6"/>
+						<label for="cb6">
+						<a href="" class="button popup-open" data-popup=".popup-condomoption" style="height: 50px;"><img src="images/pill.png" style="height:50px;width:40px;"></a>
+					</label>
+					<input type="checkbox" id="cb7"/>
+						<label for="cb7">
+						<a href="" class="button popup-open" data-popup=".popup-condomoption" style="height: 50px;"><img src="images/heart.png" style="height:50px; width:40px;"></a>
+					</label>
+					<input type="checkbox" id="cb8"/>
+						<label for="cb8">
+						<a href="" class="button popup-open" data-popup=".popup-condomoption" style="height: 50px;"><h1 style="height:50px;width:40px;">3</h1></a>
+					</label>
+					
 				</div>
-				
-			  </div>
-			 <div class="row">
-				<a><div class="label" id="condomoptionChk" >Condom <br>Option</div></a>
-				<div class="label">Morning <br>After Pill</div>
-				<div class="label">Female <br>Oragasm</div>
-				<div class="label">Times</div>
-				
-			  </div>
+				<div class="row">
+					<div class="label" id="condomoptionChk" >Condom <br>Option</div>
+					<div class="label">Morning <br>After Pill</div>
+					<div class="label">Female <br>Oragasm</div>
+					<div class="label">Times</div>
+					
+				</div>
 			  
 			</div> 
 			<hr>
 			   <div class="block-title">Life Style</div>
 			<div class="block">
-			  
-
-			  
-			  <div class="row">
-				<div class="col"> <a href="" class="button popup-open" data-popup=".popup-addnoteweight"><img src="images/weight.png" style="height: 30px;"></a>
-				
+				<div class="row">
+					<input type="checkbox" id="cb9"/>
+						<label for="cb9">
+						<a href="" class="button popup-open" data-popup=".popup-addnoteweight" style="height: 50px;"><img src="images/weight.png" style="height:50px;width:40px;"></a>
+					</label>
+					<input type="checkbox" id="cb10"/>
+						<label for="cb10">
+						<a href="" class="button popup-open" data-popup=".popup-addnotetemperature" style="height: 50px;"><img src="images/hot.png" style="height:50px; width:40px;"></a>
+					</label>
+					<input type="checkbox" id="cb11"/>
+						<label for="cb11"><img src="images/sleep.png" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb12"/>
+						<label for="cb12"><img src="images/water.png" style="height: 50px;">
+					</label>
+					
 				</div>
-				<div class="col"><a href="" class="button popup-open" data-popup=".popup-addnotetemperature"><img src="images/hot.png" style="height: 30px;"></a>
-				
+				<div class="row">
+					<div class="label">Weight</div>
+					<div class="label">Temperature</div>
+					<div class="label">Sleep</div>
+					<div class="label">Drink <br>Water</div>
+					
 				</div>
-				<div class="col"><img src="images/sleep.png" style="height: 30px;">
-				
-				</div>
-				<div class="col"><img src="images/water.png" style="height: 30px;">
-				
-				</div>
-				
-			  </div>
-			 <div class="row">
-				<div class="label">Weight</div>
-				<div class="label">&nbsp;&nbsp;Temperature</div>
-				<div class="label">&nbsp;&nbsp;&nbsp;Sleep</div>
-				<div class="label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drink Water</div>
-				
-			  </div>
 			  
 			</div>  
 			<hr>
-			   <div class="block-title">Symptoms</div>
+			<div class="block-title">Symptoms</div>
 			<div class="block">
+				<div class="row">
+					<input type="checkbox" id="cb13" />
+						<label for="cb13"><img src="images/like.png" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb14" />
+						<label for="cb14"><img src="images/abdomen.png" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb15" />
+						<label for="cb15"><img src="images/Breast.png" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb16" />
+						<label for="cb16"><img src="images/back.png" style="height: 50px;">
+					</label>
+						
+				</div>
+				<div class="row">
+					<div class="label">Feel <br>Good</div>
+					<div class="label">Abdominal <br>Cramps</div>
+					<div class="label">Tender<br>Breasts</div>
+					<div class="label">Low Back<br>Pen</div>
+					   
+				</div>
+			<br>
+			<br>
+				<div class="row">
+					<input type="checkbox" id="cb17" />
+						<label for="cb17"><img src="images/bloating.png" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb18" />
+						<label for="cb18"><img src="images/Headache.png" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb19" />
+						<label for="cb19"><img src="images/acne.png" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb20" />
+						<label for="cb20"><img src="images/nausea.png" style="height: 50px;">
+					</label>
+						
+				</div>
+				<div class="row">
+					<div class="label">Bloating</div>
+					<div class="label">Headache</div>
+					<div class="label">Acne</div>
+					<div class="label">Nausea</div>
+						
+				</div>
 			  
-
-			  
-			  <div class="row">
-				<div class="col"> <img src="images/like.png" style="height: 30px;"></div>
-				<div class="col" style="border-radius:50px!important;"><img src="images/abdomen.png" style="height: 30px;"></div>
-				<div class="col"><img src="images/Breast.png" style="height: 30px;"></div>
-				<div class="col"><img src="images/back.png" style="height: 30px;"></div>
+			<br>
+			<br>
+				<div class="row">
+					<input type="checkbox" id="cb21" />
+						<label for="cb21"><img src="images/fatigue.png" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb22" />
+						<label for="cb22"><img src="images/insomnia.png" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb23" />
+						<label for="cb23"><img src="images/seat.png" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb24" />
+						<label for="cb24"><img src="images/toilet.png" style="height: 50px;">
+					</label>
+						
+				</div>
+				<div class="row">
+					<div class="label">Fatigue</div>
+					<div class="label">Insomnia</div>
+					<div class="label">constipation</div>
+					<div class="label">Diarrhea</div>
+				</div>
+			<br>
+			<br>
 				
-			  </div>
-			 <div class="row">
-				 <div class="label">Feel <br>Good</div>
-				<div class="label">Abdominal <br>Cramps</div>
-				<div class="label">Tender<br>Breasts</div>
-				<div class="label">Low Back<br>Pen</div>
-			   
-			  </div>
-			   <br>
-			   <br>
-			  <div class="row">
-				<div class="col"> <img src="images/bloating.png" style="height: 30px;"></div>
-				<div class="col"><img src="images/Headache.png" style="height: 30px;"></div>
-				<div class="col"> <img src="images/acne.png" style="height: 30px;"></div>
-				<div class="col"><img src="images/nausea.png" style="height: 30px;"></div>
-				
-			  </div>
-			 <div class="row">
-				 <div class="label">Bloating</div>
-				<div class="label">Headache</div>
-				<div class="label">Acne</div>
-				<div class="label">Nausea</div>
-				
-			  </div>
-			  
-			  <br>
-			   <br>
-			  <div class="row">
-				<div class="col"> <img src="images/fatigue.png" style="height: 30px;"></div>
-				<div class="col"><img src="images/insomnia.png" style="height: 30px;"></div>
-				<div class="col"> <img src="images/seat.png" style="height: 30px;"></div>
-				<div class="col"><img src="images/toilet.png" style="height: 30px;"></div>
-				
-			  </div>
-			 <div class="row">
-				 <div class="label">Fatigue</div>
-				<div class="label">Insomnia</div>
-				<div class="label">constipation</div>
-				<div class="label">Diarrhea</div>
-				<br>
-			   <br>
-			  </div>
-			<div class="row" style="width:50%">
-				<div class="col">
-					<input type="checkbox" id="cb2" />
-						<label for="cb2"> <img src="images/fart.png" style="height: 30px;"></label>
+				<div class="row" style="width:50%">
+					<input type="checkbox" id="cb25" />
+						<label for="cb25"><img src="images/fart.png" style="height: 50px;">
+					</label>
+						
+					<input type="checkbox" id="cb26" />
+						<label for="cb26"><img src="images/drop1.png" style="height: 50px;">
+					</label>
+						
 					
 				</div>
-				<div class="col">
-					
-					<input type="checkbox" id="cb3" />
-						<label for="cb3"><img src="images/drop1.png" style="height: 30px;"></label>
-				  
+				<div class="row" style="width:50%">
+					<div class="label">Gas</div>
+					<div class="label">Spotting</div>
+							
+						
+						
 				</div>
-				
-			</div>
-			 <div class="row" style="width:50%">
-				<div class="label">Gas</div>
-				<div class="label">Spotting</div>
-				
-				
-				
-			  </div>
 			</div> 
 
 
 			<hr>
-			   <div class="block-title">Moods</div>
+			<div class="block-title">Moods</div>
 			<div class="block">
-			  <div class="row">
-				<div class="col"> <img src="images/smiley.svg" style="height: 30px;"></div>
-				<div class="col"> <img src="images/happy.svg" style="height: 30px;"></div>
-				<div class="col"> <img src="images/angry.svg" style="height: 30px;"></div>
-				<div class="col"> <img src="images/inLove.svg" style="height: 30px;"></div>
+				<div class="row">
+					<input type="checkbox" id="cb27" />
+						<label for="cb27"><img src="images/smiley.svg" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb28" />
+						<label for="cb28"> <img src="images/happy.svg" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb29" />
+						<label for="cb29"><img src="images/angry.svg" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb30" />
+						<label for="cb30"> <img src="images/inLove.svg" style="height: 50px;">
+					</label>
 				
 				
-			  </div>
-			 <div class="row">
-				 <div class="label">Normal</div>
-				<div class="label">Happy</div>
-				<div class="label">Angry</div>
-				<div class="label">In Love</div>
-			   
-			  </div>
-			   <br>
-			   <br>
-			  <div class="row">
-				<div class="col"> <img src="images/exhausted.svg" style="height: 30px;"></div>
-				<div class="col"> <img src="images/sad.svg" style="height: 30px;"></div>
-				<div class="col"> <img src="images/depressed.svg" style="height: 30px;"></div>
-				<div class="col"> <img src="images/emotional.svg" style="height: 30px;"></div>
-				
-				
-			  </div>
-			 <div class="row">
-				 <div class="label">Exhausted</div>
-				<div class="label">Sad</div>
-				<div class="label">Depressed</div>
-				<div class="label">Emotional</div>
-				
-			  </div>
+				</div>
+				<div class="row">
+					<div class="label">Normal</div>
+					<div class="label">Happy</div>
+					<div class="label">Angry</div>
+					<div class="label">In Love</div>
+				   
+				</div>
+			<br>
+			<br>
+				<div class="row">
+					<input type="checkbox" id="cb31" />
+						<label for="cb31"> <img src="images/exhausted.svg" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb32" />
+						<label for="cb32"> <img src="images/sad.svg" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb33" />
+						<label for="cb33"> <img src="images/depressed.svg" style="height: 50px;">
+					</label>
+					<input type="checkbox" id="cb34" />
+						<label for="cb34"> <img src="images/emotional.svg" style="height: 50px;">
+					</label>
+					
+					
+				</div>
+				<div class="row">
+					<div class="label">Exhausted</div>
+					<div class="label">Sad</div>
+					<div class="label">Depressed</div>
+					<div class="label">Emotional</div>
+					
+				</div>
 			  
-			  <br>
-			   <br>
-			  <div class="row" style="width:25%">
-				<div class="col"> <img src="images/anxious.svg" style="height: 30px;"></div>
-				
-				
-			  </div>
-			 <div class="row" style="width:25%">
-				<div class="label">Anxious</div>
-				
-			  </div>
+			<br>
+			<br>
+				<div class="row" style="width:25%">
+					<input type="checkbox" id="cb35" />
+						<label for="cb35"> <img src="images/anxious.svg" style="height: 50px;">
+					</label>
+					
+					
+				</div>
+				<div class="row" style="width:25%">
+					<div class="label">Anxious</div>
+					
+				</div>
 
 			</div> 
 			<hr>
-			   <div class="block-title">Note</div>
+			<div class="block-title">Note</div>
 			<div class="block">
 			  
 				<div style="float:left;color:#000; font-size: 15px !important;" class="button popup-open" data-popup=".popup-addnotewritediary"> <i class="fa fa-pen"></i> &nbsp; Write Diary</div>
@@ -474,7 +546,7 @@ input[type="checkbox"][id^="cb"] {
 			
 		
             </div> !---->
-			</div>
+		</div>
 			<div class="block" style="display:none;">
                      
                      <p><a class="button popup-open"  id="condomoption" href="#" data-popup=".popup-condomoption">Open Drink water Popup</a></p>
@@ -503,10 +575,13 @@ input[type="checkbox"][id^="cb"] {
                     <div class="block-title">Protection</div>
 					<div class="block">
 						<div class="row">
-							<div class="col"><img src="images/drop2.png" style="height: 30px;"></div>
-							<div class="col"><img src="images/condom.png" style="height: 30px;"></div>
+							<input type="checkbox" id="cb36" />
+								<label for="cb36"><img src="images/drop2.png" style="height: 50px;">
+							</label>
+							<input type="checkbox" id="cb36" />
+								<label for="cb36"><img src="images/drop2.png" style="height: 50px;"></div>
 						
-							<div class="col"><img src="images/drop4.png" style="height: 30px;"></div>
+							<div class="col"><img src="images/drop4.png" style="height: 50px;"></div>
 							<div class="col" style="display:none;"></div>
 							
 						  </div>
